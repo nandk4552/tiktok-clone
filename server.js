@@ -5,7 +5,7 @@ import Data from "./data.js"
 import Videos from "./models/dbModel.js"
 
 // set port, listen for requests
-const port = process.env.PORT || 9000;
+const port = process.env.PORT || 10000;
 
 // create express app
 const app = express();
@@ -19,10 +19,13 @@ app.use(cors({ origin: "*" }))
     
 
 //*DB config
-const _connection_url = 'mongodb+srv://nandk4552:Le8lXnWMjkyhgJ8n@cluster0.3ttq1uw.mongodb.net/?retryWrites=true&w=majority';
+// const _connection_url = 'mongodb+srv://nandk4552:Le8lXnWMjkyhgJ8n@cluster0.3ttq1uw.mongodb.net/?retryWrites=true&w=majority';
+const _connection_url = 'mongodb+srv://admin:Kishore007@cluster0.1sm5p4b.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(_connection_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
+}).then(() => {
+    console.log("Connected to DB")
 })
 
 // *API endpoints
